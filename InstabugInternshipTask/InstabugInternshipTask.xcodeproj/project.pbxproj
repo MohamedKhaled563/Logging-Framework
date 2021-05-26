@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		965AB9DE265D352500F2037E /* Log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 965AB9DC265D352500F2037E /* Log.xcdatamodeld */; };
-		965ABA09265D38C200F2037E /* LoggerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965ABA08265D38C200F2037E /* LoggerService.swift */; };
-		966B83F6265D53DE001BE34A /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B83F5265D53DE001BE34A /* MainPageViewController.swift */; };
-		96F18525265D4B3A00409EFC /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F18524265D4B3A00409EFC /* Logger.swift */; };
+		966334D5265E8E5E00472B6B /* Log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 966334D1265E8E5E00472B6B /* Log.xcdatamodeld */; };
+		966334D6265E8E5E00472B6B /* LoggerStorageValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966334D3265E8E5E00472B6B /* LoggerStorageValidationService.swift */; };
+		966334D7265E8E5E00472B6B /* LoggerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966334D4265E8E5E00472B6B /* LoggerService.swift */; };
+		966334DC265E8E6D00472B6B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966334DA265E8E6D00472B6B /* Logger.swift */; };
+		966334DD265E8E6D00472B6B /* LoggerLogicValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966334DB265E8E6D00472B6B /* LoggerLogicValidationService.swift */; };
+		966334E1265E8E9200472B6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966334E0265E8E9200472B6B /* Main.storyboard */; };
+		966334E5265E8E9900472B6B /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966334E4265E8E9900472B6B /* MainPageViewController.swift */; };
 		B47E3E99262D7C10007D38E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E98262D7C10007D38E8 /* AppDelegate.swift */; };
 		B47E3E9B262D7C10007D38E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E9A262D7C10007D38E8 /* SceneDelegate.swift */; };
 		B47E3E9D262D7C10007D38E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E3E9C262D7C10007D38E8 /* ViewController.swift */; };
@@ -64,10 +67,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		965AB9DD265D352500F2037E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		965ABA08265D38C200F2037E /* LoggerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerService.swift; sourceTree = "<group>"; };
-		966B83F5265D53DE001BE34A /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
-		96F18524265D4B3A00409EFC /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		966334D2265E8E5E00472B6B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		966334D3265E8E5E00472B6B /* LoggerStorageValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerStorageValidationService.swift; sourceTree = "<group>"; };
+		966334D4265E8E5E00472B6B /* LoggerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerService.swift; sourceTree = "<group>"; };
+		966334DA265E8E6D00472B6B /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		966334DB265E8E6D00472B6B /* LoggerLogicValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerLogicValidationService.swift; sourceTree = "<group>"; };
+		966334E0265E8E9200472B6B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		966334E4265E8E9900472B6B /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		B47E3E95262D7C10007D38E8 /* InstabugInternshipTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstabugInternshipTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47E3E98262D7C10007D38E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B47E3E9A262D7C10007D38E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,30 +118,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		965AB9E1265D352D00F2037E /* Model */ = {
+		966334CC265E8E3500472B6B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				965AB9DC265D352500F2037E /* Log.xcdatamodeld */,
-				965ABA08265D38C200F2037E /* LoggerService.swift */,
+				966334D1265E8E5E00472B6B /* Log.xcdatamodeld */,
+				966334D4265E8E5E00472B6B /* LoggerService.swift */,
+				966334D3265E8E5E00472B6B /* LoggerStorageValidationService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		965ABA0C265D38C700F2037E /* Controller */ = {
+		966334CD265E8E3E00472B6B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				96F18524265D4B3A00409EFC /* Logger.swift */,
+				966334E0265E8E9200472B6B /* Main.storyboard */,
+				966334E4265E8E9900472B6B /* MainPageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		966334CE265E8E4400472B6B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				966334DA265E8E6D00472B6B /* Logger.swift */,
+				966334DB265E8E6D00472B6B /* LoggerLogicValidationService.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		966B83F2265D517C001BE34A /* View */ = {
+		966334E8265E8F1600472B6B /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B47E3E9E262D7C10007D38E8 /* Main.storyboard */,
-				966B83F5265D53DE001BE34A /* MainPageViewController.swift */,
 			);
-			path = View;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		B47E3E8C262D7C10007D38E8 = {
@@ -161,12 +176,13 @@
 		B47E3E97262D7C10007D38E8 /* InstabugInternshipTask */ = {
 			isa = PBXGroup;
 			children = (
+				966334CC265E8E3500472B6B /* Model */,
+				966334CD265E8E3E00472B6B /* View */,
+				966334CE265E8E4400472B6B /* Controller */,
 				B47E3E98262D7C10007D38E8 /* AppDelegate.swift */,
-				965AB9E1265D352D00F2037E /* Model */,
-				965ABA0C265D38C700F2037E /* Controller */,
-				966B83F2265D517C001BE34A /* View */,
 				B47E3E9A262D7C10007D38E8 /* SceneDelegate.swift */,
 				B47E3E9C262D7C10007D38E8 /* ViewController.swift */,
+				B47E3E9E262D7C10007D38E8 /* Main.storyboard */,
 				B47E3EA1262D7C11007D38E8 /* Assets.xcassets */,
 				B47E3EA3262D7C11007D38E8 /* LaunchScreen.storyboard */,
 				B47E3EA6262D7C11007D38E8 /* Info.plist */,
@@ -177,6 +193,7 @@
 		B47E3ED3262D7C66007D38E8 /* InstabugLogger */ = {
 			isa = PBXGroup;
 			children = (
+				966334E8265E8F1600472B6B /* Source */,
 				B47E3ED4262D7C66007D38E8 /* InstabugLogger.h */,
 				B47E3ED5262D7C66007D38E8 /* Info.plist */,
 				B47E3EF2262D7C7C007D38E8 /* InstabugLogger.swift */,
@@ -313,6 +330,7 @@
 				B47E3EA5262D7C11007D38E8 /* LaunchScreen.storyboard in Resources */,
 				B47E3EA2262D7C11007D38E8 /* Assets.xcassets in Resources */,
 				B47E3EA0262D7C10007D38E8 /* Main.storyboard in Resources */,
+				966334E1265E8E9200472B6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,13 +355,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				965ABA09265D38C200F2037E /* LoggerService.swift in Sources */,
-				966B83F6265D53DE001BE34A /* MainPageViewController.swift in Sources */,
-				96F18525265D4B3A00409EFC /* Logger.swift in Sources */,
 				B47E3E9D262D7C10007D38E8 /* ViewController.swift in Sources */,
 				B47E3E99262D7C10007D38E8 /* AppDelegate.swift in Sources */,
+				966334D5265E8E5E00472B6B /* Log.xcdatamodeld in Sources */,
+				966334DD265E8E6D00472B6B /* LoggerLogicValidationService.swift in Sources */,
 				B47E3E9B262D7C10007D38E8 /* SceneDelegate.swift in Sources */,
-				965AB9DE265D352500F2037E /* Log.xcdatamodeld in Sources */,
+				966334DC265E8E6D00472B6B /* Logger.swift in Sources */,
+				966334D6265E8E5E00472B6B /* LoggerStorageValidationService.swift in Sources */,
+				966334E5265E8E9900472B6B /* MainPageViewController.swift in Sources */,
+				966334D7265E8E5E00472B6B /* LoggerService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,12 +712,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		965AB9DC265D352500F2037E /* Log.xcdatamodeld */ = {
+		966334D1265E8E5E00472B6B /* Log.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				965AB9DD265D352500F2037E /* Model.xcdatamodel */,
+				966334D2265E8E5E00472B6B /* Model.xcdatamodel */,
 			);
-			currentVersion = 965AB9DD265D352500F2037E /* Model.xcdatamodel */;
+			currentVersion = 966334D2265E8E5E00472B6B /* Model.xcdatamodel */;
 			path = Log.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

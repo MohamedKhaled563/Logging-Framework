@@ -7,23 +7,27 @@
 
 import Foundation
 
-struct Logger{
+struct Logger {
     var loggerService = LoggerService()
+    let validation = LoggerLogicValidationService()
     
     mutating func addLogElement(message: String, level: Int64) {
         var verifiedMessage = message
         validateMessage(message: &verifiedMessage)
         loggerService.insert(message: verifiedMessage, level: level, timeSpam: Date())
     }
+    
     func validateMessage(message: inout String) {
-        if (message.count > 3) {
+        if (validation.validateMessage(message)) {
             let lastIndex = message.index(message.startIndex, offsetBy: 2)
             message = message[message.startIndex...lastIndex] + "..."
         }
     }
+    
     mutating func getLog() -> [LogElement]? {
         return loggerService.fetch()
     }
+    
     mutating func printLog() {
         let log = getLog()
         if let safeLog = log {
@@ -33,6 +37,7 @@ struct Logger{
             }
         }
     }
+    
     mutating func deleteLog() {
         loggerService.deleteAll()
     }

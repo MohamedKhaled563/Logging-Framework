@@ -10,6 +10,7 @@ import CoreData
 
 struct LoggerService {
     var savedElements: [LogElement]?
+    let validation = LoggerStorageValidationService()
     
     mutating func insert(message: String, level: Int64, timeSpam: Date) {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
@@ -26,6 +27,7 @@ struct LoggerService {
             }
         }
     }
+    
     mutating func fetch() -> [LogElement]?{
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             let context = appDelegate.backgroundContext
@@ -41,27 +43,29 @@ struct LoggerService {
         }
         return nil
     }
+    
     mutating func deleteAll() {
-            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                let backgroundContext = appDelegate.backgroundContext
-                backgroundContext.performAndWait {
-                    let logData = fetch()
-                    if let safeData = logData {
-                        for element in safeData {
-                            backgroundContext.delete(element)
-                        }
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            let backgroundContext = appDelegate.backgroundContext
+            backgroundContext.performAndWait {
+                let logData = fetch()
+                if let safeData = logData {
+                    for element in safeData {
+                        backgroundContext.delete(element)
                     }
-                    self.savedElements = [LogElement]()
                 }
+                self.savedElements = [LogElement]()
             }
         }
+    }
+    
     mutating func checkStorageLimit() {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             let backGroundContext = appDelegate.backgroundContext
             backGroundContext.performAndWait {
                 let logElements = fetch()
                 if var elements = logElements {
-                    if (elements.count > 3) {
+                    if (validation.checkStorageLimit(of: elements)) {
                         deleteEarliestElement(&elements)
                     }
                 }
