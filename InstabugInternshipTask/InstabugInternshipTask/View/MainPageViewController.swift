@@ -9,7 +9,7 @@ import UIKit
 
 
 class MainPageViewController: ViewController {
-    let logger = Logger()
+    var logger = Logger()
     
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var levelTextField: UITextField!

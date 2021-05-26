@@ -8,23 +8,23 @@
 import Foundation
 
 struct Logger{
-    let loggerService = LoggerService()
+    var loggerService = LoggerService()
     
-    func addLogElement(message: String, level: Int64) {
+    mutating func addLogElement(message: String, level: Int64) {
         var verifiedMessage = message
         validateMessage(message: &verifiedMessage)
         loggerService.insert(message: verifiedMessage, level: level, timeSpam: Date())
     }
     func validateMessage(message: inout String) {
-        if (message.count > 1000) {
-            let lastIndex = message.index(message.startIndex, offsetBy: 999)
+        if (message.count > 3) {
+            let lastIndex = message.index(message.startIndex, offsetBy: 2)
             message = message[message.startIndex...lastIndex] + "..."
         }
     }
-    func getLog() -> [LogElement]? {
+    mutating func getLog() -> [LogElement]? {
         return loggerService.fetch()
     }
-    func printLog() {
+    mutating func printLog() {
         let log = getLog()
         if let safeLog = log {
             for logElement in safeLog {
@@ -33,7 +33,7 @@ struct Logger{
             }
         }
     }
-    func deleteLog() {
+    mutating func deleteLog() {
         loggerService.deleteAll()
     }
 }

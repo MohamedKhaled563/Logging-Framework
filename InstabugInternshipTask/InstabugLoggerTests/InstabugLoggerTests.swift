@@ -30,4 +30,7 @@ class InstabugLoggerTests: XCTestCase {
         }
     }
 
+    func testInsertInLogger() throws {
+        //let logger = Logger()
+    }
 }

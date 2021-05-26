@@ -11,7 +11,7 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let logger = Logger()
+    var logger = Logger()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Clean disk store on every app launch.
@@ -34,9 +34,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-    
     // MARK: - Core Data stack
-
+    //Single background context to be shared between all background threads
+    lazy var backgroundContext: NSManagedObjectContext = {
+        let newbackgroundContext = persistentContainer.newBackgroundContext()
+        newbackgroundContext.automaticallyMergesChangesFromParent = true
+        return newbackgroundContext
+    }()
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
